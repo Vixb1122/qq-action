@@ -56,7 +56,8 @@ jobs:
       - name: Powershell | with random
         shell: Powershell
         run: |
-          $res = Invoke-WebRequest -Uri "${{ env.QQ-NT-URL }}?t=$(Get-Random)"
+          $t = Get-Random
+          $res = Invoke-WebRequest -Uri "${{ env.QQ-NT-URL }}?t=$t"
           $res.Headers
           $res.StatusCode
           $res.Content
@@ -96,7 +97,8 @@ jobs:
       - name: pwsh | with random
         shell: pwsh
         run: |
-          $res = Invoke-WebRequest -Uri "${{ env.QQ-NT-URL }}?t=$(Get-Random)"
+          $t = Get-Random
+          $res = Invoke-WebRequest -Uri "${{ env.QQ-NT-URL }}?t=$t"
           $res.Headers
           $res.StatusCode
           $res.Content
